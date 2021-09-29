@@ -114,8 +114,10 @@ Click "+" at the bottom-right to enable it, moving it to the "enabled" collectio
 
 Congratulations! You've completed the Beginner's Guide to Qodot. From having completed this guide, you should be able to build maps in Qodot and unify textures between Trenchbroom and your Godot project.
 
-If you're interested in learning how to apply PBR materials and shaders to brushes, read [Textures](../textures.md) for more info.
+Here are some common next steps for developers:
 
-If you want to place Godot scenes and configure their properties using Trenchbroom, read [Entities](../entities.md) for more info.
-
-If you want a breakdown of Qodot's many systems, and prepare your project for scaling up, read [Best Practices](../best-practices.md).
+| Next step | Link |
+| :------------------------------------------------------------------ | :------------------------- |
+| Apply materials and shaders to brushes: | [Textures](../materials.md) |
+| Place Godot scenes using Trenchbroom: | [Entities](../entities.md) |
+| Prepare a project for scaling up: | [Best Practices](../best-practices.md) |
