@@ -1,0 +1,9 @@
+remote_theme: pmarsceill/just-the-docs
+#logo: "/assets/images/just-the-docs.png"
+aux_links:
+  "Download Qodot":
+    - "//github.com/shfty/qodot-plugin"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
+heading_anchors: true
