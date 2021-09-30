@@ -182,7 +182,7 @@ FGD fles (Forge Game Data) hold definitions for entities. They are required to m
 
 Since it's impossible to display entities without an FGD file, this should be your first step before adding any entities for a brand new Godot project.
 
-Qodot comes with a default FGD file, but you shouldn’t edit it because any changes will be overwritten when you update the Qodot plugin. Instead, you should create our own FGD file. This way, Qodot will be able to port your objects over, and all changes will be safe if you decide to update Qodot later.
+Qodot comes with a default FGD file, but you shouldn’t edit it because any changes will be overwritten when you update the Qodot. Instead, you should create our own FGD file. This way, Qodot will be able to port your objects over, and all changes will be safe if you decide to update Qodot later.
 
 Right-click on the Filesystem dock and click Create New Resource. Make a QodotFGDFile:
 

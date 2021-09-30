@@ -29,4 +29,4 @@ Your map is now in Godot!
 
 If you want to display textures on your map geometry, you'll need to connect your Godot project to Trenchbroom with a .cfg, as shown in the [Applying Textures](applying-textures.md).
 
-If you don't have an original map, and you're trying to port a map instead, read the page on [Porting](../porting.html).
+If you don't have an original map, and you're trying to port a map instead, read the page on [Porting](../porting.md).

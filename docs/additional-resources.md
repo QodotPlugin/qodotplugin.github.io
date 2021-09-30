@@ -19,7 +19,7 @@ There are an amazing handful of resources on how use Trenchbroom and Godot. Here
 
 If you need help during any step of the process, you can reach out to these communities to get more info about the corresponding process.
 
-- [Qodot Plugin Discord](https://discord.gg/c72WBuG)
+- [Qodot Discord](https://discord.gg/c72WBuG)
 - [Quake Mapping Discord (Provides J.A.C.K. and Trenchbroom support)](https://discordapp.com/invite/f5Y99aM)
 - [func_messageboard on celephais.net](https://celephais.net/board/)
 - [Trenchbroom Discord](https://discord.gg/WGf9uve)

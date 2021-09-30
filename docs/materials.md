@@ -16,7 +16,7 @@ Godot has several options for displaying PBR materials and shaders in 3D. You ca
 
 The rest of this guide will be looking through these three options, and how you can setup your Godot project to automatically apply PBR materials and shaders to surfaces.
 
-🚧 Information on [using .wad files](https://github.com/Shfty/qodot-plugin/wiki/3.-Textures-and-Materials#wad-file-support) is available on the old Qodot Plugin wiki.
+🚧 Information on [using .wad files](https://github.com/Shfty/qodot-plugin/wiki/3.-Textures-and-Materials#wad-file-support) is available on the old Qodot wiki.
 
 ## Prerequisites and words of warning
 
@@ -24,7 +24,7 @@ For loose textures, you should have your own texture files to apply to surfaces.
 
 **Note:** Qodot 1.7.0 only allows one texture file extension for a QodotMap. This is fixed in Qodot 1.7.1 and up, letting you use an array of texture extensions. Consider updating the plugin if you are struggling to load textures from multiple file extensions.
 
-**Warning:** Do not use `res://addons/qodot/textures` directly, without first copying them to a folder outside of `res://addons/qodot`. Otherwise you risk losing your work if you update the Qodot plugin.
+**Warning:** Do not use `res://addons/qodot/textures` directly, without first copying them to a folder outside of `res://addons/qodot`. Otherwise you risk losing your work if you update the Qodot.
 
 **Warning:** In all Qodot versions including 1.7.1, Qodot won't read textures with spaces in the filename, including the folder it came from. Please check that your textures fit this naming scheme before continuing.
 

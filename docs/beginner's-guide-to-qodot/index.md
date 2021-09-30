@@ -7,7 +7,7 @@ has_children: true
 
 # Beginner's Guide to Qodot
 
-Welcome! If you get stuck at any time, feel free to ask us on the [Qodot Plugin Discord](https://discord.gg/c72WBuG).
+Welcome! If you get stuck at any time, feel free to ask us on the [Qodot Discord](https://discord.gg/c72WBuG).
 
 ## Prerequisites
 
