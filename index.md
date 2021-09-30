@@ -12,22 +12,27 @@ This is the official documentation for [Qodot](https://github.com/QodotPlugin/qo
 
 ## What is Qodot?
 
-Qodot is a powerful and complex tool to convert Quake maps into Godot meshes, collisions, and scenes. You can use map editors like [Trenchbroom](https://trenchbroom.github.io/) as a level design tool for your Godot project, using Qodot to bridge the gap between these two programs.
+Qodot is a powerful and complex tool to convert Quake maps into Godot meshes, collisions, and scenes.
+
+You can use map editors like [Trenchbroom](https://trenchbroom.github.io/) as a level design tool for your Godot projects. Qodot works as the bridge between Trenchbroom and Godot.
+
+![](/images/sunkper-banner.jpg)
+Models and screenshots courtesy of [@Sunkper](https://twitter.com/SunkPer)
 
 ## How to read this guide
 
-Anything → With → Arrows describes nested, foldable properties or buttons, in either Trenchbroom or Godot.
+Text with a **Note:** indicates "gotcha" scenarios for less-common situations, or to emphasize any details that are too important to skip during the process.
+
+Text with a **Warning:** is here to prevent you from losing a lot of progress or time. This usually indicates pitfalls and quirks that limit the flexibility of Qodot.
+
+Text → With → Arrows describes nested, foldable properties or buttons. This can be for either Trenchbroom or Godot.
 
 Examples:
 -   File → Save
 -   Transform → Position → X
 -   Project → Project Settings → Plugins
 
-Any instances of the 🚧 emoji means that this section is not totally researched. You are more than welcome to contribute to [This website's Github page](https://github.com/QodotPlugin/qodotplugin.github.io) to fill out these missing details.
-
-Any text with **Note:** indicates "gotcha" scenarios for less-common situations, or to emphasize any details that are too important to skip during the process.
-
-Any text with **Warning:** is here to prevent you from losing a lot of progress or time. This usually indicates pitfalls and quirks that limit the flexibility of Qodot.
+The 🚧 emoji means that this section is not totally researched or otherwise incomplete. You are more than welcome to contribute to [This website's Github page](https://github.com/QodotPlugin/qodotplugin.github.io) to fill out these missing details.
 
 ## Bug reporting
 
