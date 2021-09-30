@@ -7,28 +7,27 @@ parent: Beginner's Guide to Qodot
 
 # Applying Textures
 
-While you can follow the steps shown in [Building Maps](building-maps.md), most maps will be missing textures. While you can manually add textures to material slots in the MeshInstance node, Qodot can automate the process of applying textures to your map geometry.
+While you can follow the steps shown in [Building Maps](building-maps.md), most maps will be missing textures. Qodot can automate the process of applying textures to your map geometry.
+
+1. TOC
+{:toc}
+
+## Overview
 
 The ideal pipeline to take a texture from "Godot project" to "on QodotMap geometry" is:
 
-1. Use a Trenchbroom game config that reads your Godot project directory as "Game Path"
-2. Add a texture to your Godot project directory, in a folder called `/textures`
-3. Refresh Trenchbroom texture collections by pressing <kbd>F5</kbd>
-4. Enable any Trenchbroom texture collections containing your new texture
-5. Apply the texture to a brush in Trenchbroom
-6. Click Full Build on a QodotMap
+1. Use a Trenchbroom game config that reads your Godot project directory as "Game Path".
+1. Add a texture to your Godot project directory, in a folder called `/textures`.
+1. Refresh Trenchbroom texture collections by pressing <kbd>F5</kbd>.
+1. Enable any Trenchbroom texture collections containing your new texture.
+1. Apply the texture to a brush in Trenchbroom.
+1. Click Full Build on a QodotMap.
 
 The rest of this page will go through each of these steps.
-
 
 Warning
 {: .label .label-red }
 Don't add new files to the `res://addons/qodot` folder. Anything added here can be erased if you update Qodot. However, you are free to use and copy files in `res://addons/qodot` as illustrated later on this page.
-
-Table of Contents:
-
-1. TOC
-{:toc}
 
 ## Creating a Textures folder
 

@@ -4,12 +4,12 @@ title: Additional Resources
 nav_order: 11
 ---
 
-1. TOC
-{:toc}
-
 # Additional Resources
 
 Here's a list of learning resources and assets for you to use in your Godot games.
+
+1. TOC
+{:toc}
 
 # Learning Resources
 

@@ -4,9 +4,6 @@ title: Best Practices
 nav_order: 10
 ---
 
-1. TOC
-{:toc}
-
 # Best Practices
 
 This document covers several topics including how to:
@@ -16,6 +13,9 @@ This document covers several topics including how to:
 - Avoid development disasters and pitfalls when using Qodot
 
 These are all subject to change over time as we all get more experience using Qodot.
+
+1. TOC
+{:toc}
 
 # Tips
 
