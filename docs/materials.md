@@ -4,8 +4,6 @@ title: Materials
 nav_order: 6
 ---
 
-1. TOC
-{:toc}
 
 # Materials
 
@@ -16,17 +14,24 @@ Godot has several options for displaying PBR materials and shaders in 3D. You ca
 
 The rest of this guide will be looking through these three options, and how you can setup your Godot project to automatically apply PBR materials and shaders to surfaces.
 
-🚧 Information on [using .wad files](https://github.com/Shfty/qodot-plugin/wiki/3.-Textures-and-Materials#wad-file-support) is available on the old Qodot wiki.
+1. TOC
+{:toc}
 
-## Prerequisites and words of warning
+## Prerequisites
 
 For loose textures, you should have your own texture files to apply to surfaces. If you installed the entire plugin, you are free to copy the textures in `res://addons/qodot/textures` to your own project directory, into a folder like `res://textures`.
 
-**Note:** Qodot 1.7.0 only allows one texture file extension for a QodotMap. This is fixed in Qodot 1.7.1 and up, letting you use an array of texture extensions. Consider updating the plugin if you are struggling to load textures from multiple file extensions.
+Differences in 1.7.0
+{: .label .label-blue }
+You can only use one texture file extension per QodotMap.
 
-**Warning:** Do not use `res://addons/qodot/textures` directly, without first copying them to a folder outside of `res://addons/qodot`. Otherwise you risk losing your work if you update the Qodot.
+Differences in 1.7.1
+{: .label .label-blue }
+You can use an array of texture extensions per QodotMap. Consider updating the plugin if you are struggling to load textures from multiple file extensions.
 
-**Warning:** In all Qodot versions including 1.7.1, Qodot won't read textures with spaces in the filename, including the folder it came from. Please check that your textures fit this naming scheme before continuing.
+Warning
+{: .label .label-red }
+Qodot can't read textures with spaces in the filename, or its parent folders. Check that your textures fit this naming scheme before continuing.
 
 # Comparison of Texturing Methods
 
@@ -34,13 +39,13 @@ Here is a table showing a quick overview of the benefits some methods have over 
 
 Benefit | Basic Texturing | Material Override | Auto PBR Texturing
 ------- | --------------- | ----------------- | ------------------
-Use textures between Trenchbroom and Qodot | y | y | y
-Name materials freely | y | y | n
-Flexible folder structure | y | y | n
-Keep material tweaks on map rebuild | n | y | n
-Uses GLSL shaders | n | y | n
-Uses PBR Maps | n | y | y
-Builds Godot PBR materials for you | n | n | y
+Use textures between Trenchbroom and Qodot | ✅ | ✅ | ✅
+Name materials freely | ✅ | ✅ |   
+Flexible folder structure | ✅ | ✅ |   
+Keep material tweaks on map rebuild |   | ✅ |   
+Uses GLSL shaders |   | ✅ |   
+Uses PBR Maps |   | ✅ | ✅
+Builds Godot PBR materials for you |   |   | ✅
 
 Material Override applies a .material or .tres of the same name as your texture file, letting you use ShaderMaterials and customized SpatialMaterials instead of flat textures.
 

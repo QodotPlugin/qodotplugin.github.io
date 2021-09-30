@@ -19,7 +19,9 @@ Once you click “Qodot” and click download, wait for it to finish downloading
 
 A tree of items to be installed will show up. Click "Install" at the bottom of the window.
 
-**Note:** Godot 3.x can hang during the import process, but this is not a crash. It will finish importing if you wait long enough. You can speed this process up by moving `/addons/qodot` out of your project, set Project -> Project Settings -> Import -> Import Etc2 to false, and move it back in. You can also delete `/addons/qodot/textures` if you don't plan on copying the example textures to your own `/textures` folder.
+Note
+{: .label .label-blue }
+Godot 3.x can hang during the import process, but this is not a crash. It will finish importing if you wait long enough. You can speed this process up by moving `/addons/qodot` out of your project, set Project -> Project Settings -> Import -> Import Etc2 to false, and move it back in. You can also delete `/addons/qodot/textures` if you don't plan on copying the example textures to your own `/textures` folder.
 
 When the importer is done, go to Project → Project Settings -> Plugins. By default, Qodot is not enabled. Click the checkbox next to its name to enable it:
 

@@ -4,12 +4,9 @@ title: Porting
 nav_order: 8
 ---
 
-1. TOC
-{:toc}
-
 # Porting
 
-Porting a map means you don't have to make the geometry yourself. On a less-comical note, porting allows you to re-experience maps from other games in the Godot engine. Qodot was made for porting Quake 1 maps, but it also is capable of porting:
+Porting a map allows you to re-experience maps from other games in the Godot engine. Qodot was made for porting Quake 1 maps, but it also is capable of porting:
 
 - Standard
 - Valve
@@ -22,7 +19,10 @@ Porting a map means you don't have to make the geometry yourself. On a less-comi
 
 Qodot supports the full range of Quake-derived texture formats.
 
-# Prerequisites
+1. TOC
+{:toc}
+
+## Prerequisites
 
 Before starting to import a map into Qodot, it's important to check if you have the following:  
 - A Trenchbroom .cfg that supports your specific game.
@@ -30,7 +30,7 @@ Before starting to import a map into Qodot, it's important to check if you have 
 - Textures as .wad or image files.  
 - All .fgd files used to define the map's entities.
 
-## How to get around missing prerequisites
+### How to get around missing prerequisites
 
 If you don't have a game config for your ported game, even after searching community forums, try loading it into other game definitions. You can read the [Trenchbroom Manual](https://trenchbroom.github.io/manual/latest/#game_configuration_file_syntax) for more info on creating a .cfg file from scratch.
 

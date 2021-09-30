@@ -4,12 +4,12 @@ title: Geometry
 nav_order: 8
 ---
 
-1. TOC
-{:toc}
-
 # Geometry
 
 This is a miscelaneous category for features related to mapping that generally apply to all projects. You should read [Beginner's Guide to Qodot](/docs/beginner's-guide-to-qodot/) before reading this page.
+
+1. TOC
+{:toc}
 
 # Clipping
 

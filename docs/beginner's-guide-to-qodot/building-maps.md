@@ -25,7 +25,9 @@ Your map is now in Godot!
 
 ![](../../images/install-final.png)
 
-**Note:** If you don’t see QodotMap in your nodes list, make sure you have enabled Qodot in the Project → Project Settings -> Plugin window.
+Note
+{: .label .label-blue }
+If you don’t see QodotMap in your nodes list, make sure you have enabled Qodot in the Project → Project Settings -> Plugin window.
 
 If you want to display textures on your map geometry, you'll need to connect your Godot project to Trenchbroom with a .cfg, as shown in the [Applying Textures](applying-textures.md).
 

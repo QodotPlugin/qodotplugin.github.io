@@ -20,7 +20,10 @@ The ideal pipeline to take a texture from "Godot project" to "on QodotMap geomet
 
 The rest of this page will go through each of these steps.
 
-**Warning:** Never add new files to the `res://addons/qodot` folder. Anything you add here will be erased since Qodot can auto-update through AssetLib. You are free to use or remove files in `res://addons/qodot` as illustrated later in this page.
+
+Warning
+{: .label .label-red }
+Don't add new files to the `res://addons/qodot` folder. Anything added here can be erased if you update Qodot. However, you are free to use and copy files in `res://addons/qodot` as illustrated later on this page.
 
 Table of Contents:
 
@@ -37,11 +40,15 @@ A Trenchbroom game configuration (stored as a .cfg file) tells Trenchbroom about
 
 When you install Qodot, you get a resource tool to create your own Trenchbroom config file. It's here so you can create a unique .cfg for your each Godot project.
 
-**Note:** Although we encourage you to make a unique .cfg for each Godot project, you can create a generic Trenchbroom config file for Qodot. However, you will have to copy/paste textures between your generic Qodot folder and whichever Godot project that's using the generic config.
+Note
+{: .label .label-blue }
+Although we encourage you to make a unique .cfg for each Godot project, you can create a generic Trenchbroom config file for Qodot. However, you will have to copy/paste textures between your generic Qodot folder and whichever Godot project that's using the generic config.
 
 Use the FileSystem dock to search for the `Qodot_Trenchbroom_Config_Folder.tres` file. It is installed at  `res://addons/qodot/game_definitions/trenchbroom/`. You can ignore `Qodot_Trenchbroom_Config_File.tres`, it's the `_Folder` variant we want.
 
-**Note:** Your project needs an `icon.png` file, or else Qodot won't be able to generate a Trenchbroom game config. Godot will complain on this step until you re-add `res://icon.png` and restart Godot.
+Note
+{: .label .label-blue }
+Your project needs an `icon.png` file, or else Qodot won't be able to generate a Trenchbroom game config. Godot will complain on this step until you re-add `res://icon.png` and restart Godot.
 
 Open the `Config_Folder.tres` resource by double clicking on it in the FileSystem dock. This will give you a list of tools to edit the new .cfg inside of your Inspector.
 
@@ -87,7 +94,9 @@ Under "Game Path", click the ellipsis "..." and select your Godot project folder
 
 You can now create a new map with your Godot project as the game type.
 
-**Note:** If you're having trouble clicking the apply button on the window, temporarily increase your screen's resolution. Not clicking apply here can cause issues later on when reloading Trenchbroom.
+Note
+{: .label .label-blue }
+If you're having trouble clicking the apply button on the window, temporarily increase your screen's resolution. Not clicking apply here can cause issues later on when reloading Trenchbroom.
 
 ## Enabling Trenchbroom Texture Collections
 

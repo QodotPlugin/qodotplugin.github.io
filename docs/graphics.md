@@ -4,15 +4,15 @@ title: Graphics
 nav_order: 9
 ---
 
-1. TOC
-{:toc}
-
 # Graphics
 One of the main benefits to using Qodot is that you can apply level design theory from the quake-era of games while using Godot’s many graphical features to make the game stand out visually.
 
 This section does **not** cover how to [Apply Textures](/docs/beginner's-guide-to-qodot/applying-textures.html) or how to [Apply PBR and Shader Materials](/materials.md) to surfaces.
 
 Instead, this section covers how to integrate your Qodot geometry with Godot's graphical systems.
+
+1. TOC
+{:toc}
 
 ## Lighting
 Godot 3.x comes with several lighting options:
@@ -23,13 +23,12 @@ Godot 3.x comes with several lighting options:
 ### Comparison of Lighting Methods
 
 | Benefit | Dynamic Lighting | BakedLightmap | GIProbe |
-| ------- | ---------------- |-------------- | ------- |
-| Optimized for low-end GPUs | True | True | False |
-| Increases project filesize | False | True | False |
-| Updates in realtime | True | False | True |
-| Uses indirect light | False | True | True |
-| Adds to project filesize | False | True | True |
-| Photorealistic quality | False | True | True |
+| :------ | :--------------: | :-----------: | :-----: |
+| Optimized for low-end GPUs | ✅ | ✅ |    |
+| Updates in realtime | ✅ |    | ✅ |
+| Uses bounced light |    | ✅ | ✅ |
+| Minimizes project filesize | ✅ |   |   |
+| Photorealistic quality |    | ✅ | ✅ |
 
 ### Baked Lightmaps
 
@@ -116,13 +115,11 @@ There are two main methods you can achieve reflections in Godot 3.x:
 ### Comparison of Reflection Methods
 
 | Benefit | ReflectionProbe | SS Reflections |
-| ------- | --------------- | -------------- |
-| Optimized for low-end GPUs | True | False |
-| High quality | True | False |
-| Increases project filesize | True | False |
-| Updates in realtime | False | True |
-| Uses indirect light | True | False |
-| Adds to project filesize | True | False |
+| :------ | :-------------: | :------------: |
+| Optimized for low-end GPUs | ✅ |    |
+| Increases project filesize | ✅ |    |
+| Updates in realtime |    | ✅ |
+| Minimizes project filesize |   | ✅ |
 
 ### ReflectionProbe
 Reflection probes provide pre-calculated reflections of an area to appear on shiny surfaces. For indoor scenes especially, this is significantly more accurate than letting the sky colour/texture determine the reflections shown on a shiny object.
