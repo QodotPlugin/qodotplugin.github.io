@@ -358,10 +358,17 @@ When loading up a map for your game config, first check that you're using your g
 
 ![](../images/solid-fgd-check.png)
 
-# 🚧 Models in Trenchbroom
-You can display a model in TrenchBroom that will be built as the equivalent model in Godot. In this case, the Trenchbroom model just represents a point entity.
+# Models in Trenchbroom
+You can display a model in TrenchBroom over a Point Class definition. You can then set up the equivalent model in Godot.
 
-The model has to be an .obj, and you have to create an entity definition in your game’s FGD for that one model. You cannot swap models in and out of Trenchbroom like you can with Source or other 2000s-era BSP workflows.
+## Requirements
+
+- The model has to be an .obj
+- You have to create an entity definition for this model specifically in your game’s FGD.
+- You have to enable `obj_neverball` in your Trenchbroom Game Config with this line: `"modelformats": [ "obj_neverball" ]`.
+- You cannot swap models in and out of Trenchbroom like you can with Source.
+
+## Setup
 
 You can add a **Meta Properties** in your point entity definition with model as the key and the relative path of your .obj file as the value.
 
