@@ -158,3 +158,7 @@ To use a set of WAD files with QodotMap, add them to the Texture Wads property i
 The texture loader will scan each WAD for textures present in the map and load them as appropriate.
 
 **Note:** As the palette.lmp file from Quake was released into the public domain, it's included with Qodot to simplify the import of common texture WADs.
+
+# Troubleshooting
+
+If your map textures appear stretched in Godot, make sure to check "Repeat" in the Import dock for every texture you use.
