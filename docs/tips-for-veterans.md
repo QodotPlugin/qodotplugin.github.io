@@ -17,8 +17,6 @@ Like many engines, Godot features three types of culling to hide unused geometry
 
 Qodot also doesn't create vertices for faces completely covered-up by other worldspawn brushes.
 
-While it's possible to use Godot's occlusion culling with Qodot, there is not yet any official integration. This may change in future Qodot versions.
-
 Here are a few other caviats about performance that is likely to change how you map for Qodot:
 
 - There are no automated visibility checks built into your map. There is no VIS step like there was in Quake, GoldSrc, and Source.
