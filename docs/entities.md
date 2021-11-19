@@ -159,10 +159,11 @@ To add a new class property to an entity:
 1. Open the dictionary.
 2. Click the first pencil by "New Key: [null]" and select "String" as the key data type.
 3. Name your property in the key text field, no spaces.
-4. Click the second pencil by "New Value: [null]" and select any valid data type.
-5. Change the value to your desired default, or leave it blank.
-6. Click "Add new key/value pair".
-7. Re-export your FGD once all class properties are added.
+4. Click the second pencil by "New Value: [null]".
+5. Select any valid data type. Read [Class Property Data Types](#class-property-data-types) for more information.
+6. Change the value to your desired default, or leave it blank.
+7. Click "Add new key/value pair".
+8. Re-export your FGD once all class properties are added.
 
 You can also set default values for your properties, by repeating this process in Meta Properties, matching the key names and value datatypes from this dictionary.
 
@@ -263,20 +264,27 @@ As shown earlier in this page, you can define properties for entities in the Cla
 
 ## Note on Arrays
 
-When you add an Array as a class property, it must contain other Arrays as its items. Each nested array denotes one flag. Inside the flag must be the data types `String`, `bool`/`float`/`int`/`String`, and a repeat of the previous data type. This corresponds to Name, Value, and Default value.
+When you add an Array as a class property, it must contain other Arrays, with each Array creating one flag. These flag Arrays must have 3 items: Name, Value, and Default value.
 
-The type of the default value can be set to `null`, and it will work just fine in Trenchbroom and Qodot. The default value entry is still a requirement to make-up the bitmask structure in an FGD file, as seen in the FGD files of classic games like Quake.
+Name must be a String.
 
+Value is traditionally a bool, but it can also be a float, int, or String. Qodot parses all these data types as Strings in the end, which will change how you will be [Accessing Class Properties in Code](#accessing-class-properties-in-code).
+
+The default value can be the previous data type, or even `null`. It is not read by Qodot, just the regular Value.
 
 # Accessing Class Properties in Code
 
-`properties`
+To access class properties in code, ensure your entity `extends QodotEntity`, then access its `properties` variable.
 
-This dictionary's keys are the same as the keys you set earlier in Class Properties.
+The `properties` dictionary will feature the same keys you set earlier in Class Properties. The value data types will also match, but their contents will be changed to match what you set in your map file.
 
-You can check for these properties using `if "key_name" in properties` and access them with `properties["key_name"]`. This is how you read Trenchbroom-set properties in Godot.
+For example, setting the `"respawn_time"` of a pickup entity to 60 seconds will return 60 when accessing `properties["respawn_time"]` in code.
 
-For example, if you have a point light entity with a "color" key and a Color value in the class properties, your code could look like this to apply the color to your light:
+For safety, you can check for these properties using `if "key_name" in properties:` and *then* access them with `properties["key_name"]`.
+
+## Full example
+
+If you have a point light entity with a "color" key and a Color value in the class properties, your code could look like this to apply the color to your light:
 
 ```gdscript
 extends QodotEntity
@@ -306,6 +314,7 @@ You can display a model in TrenchBroom over a Point Class definition. You can th
 - You have to create an entity definition for this model specifically in your game’s FGD.
 - You have to enable `obj_neverball` in your Trenchbroom Game Config with this line: `"modelformats": [ "obj_neverball" ]`.
 - You cannot swap models in and out of Trenchbroom like you can with Source.
+- The support for scaling models in Trenchbroom is coming soon, but know that old Trenchbroom versions don't support scaling models.
 
 ## Setup
 
@@ -315,7 +324,7 @@ Example: `key: model value: "entities/models/my_model.obj"`
 
 Warning
 {: .label .label-red }
-Add quotes surrounding your value, or TrenchBroom may crash when placing your entity class.
+Add quotes surrounding your value, or TrenchBroom will crash when placing your entity class.
 
 Now that you’ve done this, you also need to update your game config every time your FGD changes. You can repeat the process for exporting a game config from earlier to overwrite the entire folder.
 
