@@ -7,27 +7,29 @@ parent: Beginner's Guide to Qodot
 
 # Applying Textures
 
-While you can follow the steps shown in [Building Maps](building-maps.md), most maps will be missing textures. Qodot can automate the process of applying textures to your map geometry.
+While you can follow the steps shown in [Building Maps](building-maps.md) without additional setup, most maps will be missing textures when built.
+
+If your .map file has textures applied to the geometric brushes, Qodot can automate the process of applying those textures to your map geometry in Godot.
 
 1. TOC
 {:toc}
 
 ## Overview
 
-The ideal pipeline to take a texture from "Godot project" to "on QodotMap geometry" is:
+The pipeline to take a texture from "Godot project" to "on QodotMap geometry" is:
 
-1. Use a Trenchbroom game config that reads your Godot project directory as "Game Path".
-1. Add a texture to your Godot project directory, in a folder called `/textures`.
+1. Create a Trenchbroom game config (.cfg) that uses your Godot project directory as its *Game Path* in Preferences.
+1. Add an image to your Godot project directory, in a folder called `/textures/subfolder`.
 1. Refresh Trenchbroom texture collections by pressing <kbd>F5</kbd>.
-1. Enable any Trenchbroom texture collections containing your new texture.
-1. Apply the texture to a brush in Trenchbroom.
-1. Click Full Build on a QodotMap.
+1. Enable new texture collections in Trenchbroom using the Texture tab.
+1. Select the brush you want to texture and click the texture to paint it.
+1. Click Full Build on a QodotMap to view the texture in Godot.
 
 The rest of this page will go through each of these steps.
 
 Warning
 {: .label .label-red }
-Don't add new files to the `res://addons/qodot` folder. Anything added here can be erased if you update Qodot. However, you are free to use and copy files in `res://addons/qodot` as illustrated later on this page.
+Don't add new files to the `res://addons/qodot` folder or any of its subfolders. Anything added here will be overwritten or erased if you update Qodot. However, you are free to use and copy files in `res://addons/qodot` as shown later on this page.
 
 ## Creating a Textures folder
 
@@ -37,11 +39,11 @@ Trenchbroom reads your Godot project's textures by looking for a folder called `
 
 A Trenchbroom game configuration (stored as a .cfg file) tells Trenchbroom about the name of your game, and where your game's project directory is.
 
-When you install Qodot, you get a resource tool to create your own Trenchbroom config file. It's here so you can create a unique .cfg for your each Godot project.
+When you install Qodot, you get a resource tool to create your own Trenchbroom config file. When you **double click** the .tres file, you get a menu in the Inspector.
 
-Note
-{: .label .label-blue }
-Although we encourage you to make a unique .cfg for each Godot project, you can create a generic Trenchbroom config file for Qodot. However, you will have to copy/paste textures between your generic Qodot folder and whichever Godot project that's using the generic config.
+This lets you create a unique the details for a .cfg for your Godot project.
+
+When it's ready, you can click *Config Folder -> Export* and Qodot will automatically create the .cfg, as well as appropriate subfolders and accompanying files in your Trenchbroom `/games` directory.
 
 Use the FileSystem dock to search for the `Qodot_Trenchbroom_Config_Folder.tres` file. It is installed at  `res://addons/qodot/game_definitions/trenchbroom/`. You can ignore `Qodot_Trenchbroom_Config_File.tres`, it's the `_Folder` variant we want.
 

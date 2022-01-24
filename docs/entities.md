@@ -59,6 +59,18 @@ With your FGD open, click on the Entity Definitions array to open it. Drop your 
 
 We still need to update the Trenchbroom game config to include our new entity definitions. Later we'll make sure the QodotMap node catches wind of the new entity definitions.
 
+## Adding required Entity Definitions to your FGD
+
+Before trying to consider your FGD complete, you may want to include worldspawn layer and group functionality in your FGD. These are kept as classes in Qodot.fgd, and are recommended to copy-over into all custom FGDs.
+
+These entities are:
+
+- worldspawn_solid
+- worldspawn_base
+- group_solid
+
+You can expect them to work out of the box and not require changing, so they can be left in the `/addons/qodot` folder and updated as needed.
+
 ## Adding FGDs to your Trenchbroom game config
 Open the `config_folder.tres` resource and add a new item to the _Fgd Files_ array. Add the FGD you made by dragging and dropping, or by using the folder selection button.
 
@@ -407,15 +419,15 @@ Although you are given some entity definitions through `Qodot.fgd`, such as
 - Detail
 - Wall
 
-These example entities have limited functionality. They exist as an example of what can be done, but they do not reliably provide functionality as you might expect.
-
-Consider creating your own entities instead.
+These example entities have limited functionality. They exist as an example of what can be done, and to port over some functionalities from Quake.
 
 However, there are some entities you have to include in an FGD for your map's worldspawn geometry to build:
 
 - worldspawn_solid
 - worldspawn_base
 - group_solid
+
+Consider creating your own entities instead.
 
 # Report issues with this page
 
