@@ -88,6 +88,12 @@ Note
 {: .label .label-blue }
 If you get a Trenchbroom error about incomplete strings, make sure the *Fgd Name* on your own FGD is not “Qodot”.
 
+Note
+{: .label .label-blue }
+An error can occur if any entity definitions are missing a classname.
+
+![](../images/entity-definitions-missing-classname.PNG)
+
 You should be able to see more entity definitions in the entity collections list. This means your FGD made it into Trenchbroom successfully!
 
 ![](https://codahosted.io/images/77T7fADkTg/blobs/bl-yzq2y_LQzl/23eb7ddfe36250e9740bc5d9077f6641e0f54f06c4a9b81b386cbe5a29e874d2a647a967fa01e3b922e8bba1cfac00fdac0eb64540a1e5e0dc50bd233398cd9d8e10bd9bfed11b02e10071f72c5b1acc8990de95a1e2af4a5469f723893a646c3c2aeb63)
