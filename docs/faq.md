@@ -5,6 +5,11 @@ nav_order: 13
 ---
 # FAQ
 
+1. TOC
+{: toc}
+
+# Frequently asked questions
+
 ## When I press build on my QodotMap node, why isn't it loading in Godot?
 
 One of the following is probably the case:
