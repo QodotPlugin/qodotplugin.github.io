@@ -35,6 +35,8 @@ Don't add new files to the `res://addons/qodot` folder or any of its subfolders.
 
 Trenchbroom reads your Godot project's textures by looking for a folder called `/textures` on the top level of your Godot project, then looking for a subfolder that groups these textures. The subfolder can be called anything. One example of this is `res://textures/group_name`, where `/group_name` can be any name to group textures with.
 
+Note: Both the file path and texture name cannot contain UTF-8 characters or spaces.
+
 ## Making a Trenchbroom game config
 
 A Trenchbroom game configuration (stored as a .cfg file) tells Trenchbroom about the name of your game, and where your game's project directory is.
