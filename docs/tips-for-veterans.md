@@ -14,7 +14,7 @@ This is a list of caviats about the Qodot workflow that is likely to change the 
 - Model support isn't as flexible as something like Source. Each point entity can only display one model in the Trenchbroom editor. See [Entities](entities.md) for more info.
 
 ## Gameplay
-- With the default Qodot.fgd, you can turn off a brush's collision by making it a func_illusionary. You can add this definition to your own FGD to replicate this behaviour. See [Entities](entites.md) for more info.
+- With the default Qodot.fgd, you can turn off a brush's collision by making it a func_illusionary. You can add this definition to your own FGD to replicate this behaviour. See [Entities](entities.md) for more info.
 - You can combine multiple QodotMap nodes in one Godot scene, and use this to instantiate repetitive/procedural geometry in your Godot scene.
 - If you want a feature from a specific game, like Source's `func_breakable_surf`, you'll need to implement it yourself using [Entities](entites.md), or refer to community repositories like [Qodot Entities on Github](https://github.com/RhapsodyInGeek/qodot-entities) for other's creations.
 
