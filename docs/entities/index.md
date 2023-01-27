@@ -13,94 +13,36 @@ This page is a WIP, currently in the process of being broken into succinct subpa
 1. TOC
 {:toc}
 
-## Introduction to Entity Types
+# Intro to Entities
 
 There are three main types of entities:
 - Point Classes
 - Solid Classes
 - Base Classes
 
-A point entity is a position in 3D space. They work well for spawn locations, pickups, and instancing Godot scenes.
+## Point Classes
 
-Solid classes are pieces of geometry with special properties, like doors and breakable walls. You can use these entities to tie scripts and other functionality to brushes in the world. Collision and meshes are optional as well.
+A point class is a single position in 3D space. Often referred to as Point Entities.
 
-Base classes are empty; they only contain properties as a template for other classes. They're handy when needed, but never required.
+A point class can either be a single node with a script attached, or an instantiated scene file (.tscn) placed at the point's location.
 
-Keep in mind that "Entities" and "Classes" mean the same thing for this entire page. Qodot calls them classes, Trenchbroom calls them entities. Neither of these systems inherently interact with the classes found in GDscript or C#, they are completely separate.
+Point classes work well when placing objects that won't change in size.
 
-# Creating an FGD file
+## Solid Classes
 
-This should be your first step before adding any entities for a brand new Godot project.
+Solid classes are brushes separated from the static world. Often referred to as Brush Entities.
 
-FGD fles (Forge Game Data) hold definitions for entities. They are required to make Trenchbroom and QodotMap understand custom entities.
+Solid classes can behave as any kind of CollisionObject. This includes `Area`, `StaticBody`, `RigidBody`, and `KinematicBody`.
 
-While you can piggyback off of Qodot.fgd included in all installations of Qodot, this puts your custom entities at risk if you choose to update Qodot, since Qodot.fgd will be overwritten with the defaults.
+By default, they are given a CollisionShape child with a ConcaveShape resource matching their brush vertices.
 
-It is safer to create a unique FGD file for your game that goes with the custom Trenchbroom game config created earlier in the [Applying Textures](./beginner's-guide-to-qodot/applying-textures) guide.
+## Base Classes
 
-Right-click on the Filesystem dock and click Create New Resource. Make a QodotFGDFile:
+Base classes store properties shared by multiple classes. A base class does not function on its own, and it is is never required for any entity definition.
 
-![](https://codahosted.io/images/77T7fADkTg/blobs/bl-WrbQagxvxB/faca91bba64558581e77c577cb043b0965b26a778f42fca7bec3dfb4f94cae095fc9cde8007ff62a736d0b63810ccdaf0fedafab6786e931a065248d5d31f0f73649901ad49482265f0434f2e0b836f7f0bc75208900d67723557efc068c3ac0a50bffaf)
+Base classes are helpful at encapsulating repeating properties between multiple entities. You can assure some code safety practices (like duck typing) by ensuring a certain group of entities all share similar properties.
 
-I recommend saving this file as your_game_name_fgd.tres so it’s easy to search for “fgd” or just your game’s name the Filesystem dock. Mine is practice_fgd.tres.
-
-Change the _Fgd Name_ to your game’s name.
-
-Note
-{: .label .label-blue }
-You have to set the Fgd Name so it doesn’t conflict with the “Qodot” namespace, otherwise Trenchbroom will discard your FGD.
-
-FGDs by default contain example entity definitions, which we don't need as Qodot.fgd contains all of these already. It helps to start an FGD with a completely clean entity definitions array, so you can focus on adding new entities not covered by Qodot.fgd.
-
-## Adding an Entity Definition to an FGD
-
-With your FGD open, click on the Entity Definitions array to open it. Drop your new entity definition into any empty slot in the list.
-
-![](https://codahosted.io/images/77T7fADkTg/blobs/bl-y11gfMCDG5/7db319dcfe9df0846f090b47e5cb490f59ba0f2d2520f30e7b632c08fa30b30a7d5fbeb4a29b043d0268ee9a656e86a87cdd63b59403f3d4803efbbee7cc566c26027bab11d41b8b9906e8e4d3597741436fa3776f89ae374134171658a174d26d64cb60)
-
-We still need to update the Trenchbroom game config to include our new entity definitions. Later we'll make sure the QodotMap node catches wind of the new entity definitions.
-
-## Adding required Entity Definitions to your FGD
-
-Before trying to consider your FGD complete, you may want to include worldspawn layer and group functionality in your FGD. These are kept as classes in Qodot.fgd, and are recommended to copy-over into all custom FGDs.
-
-These entities are:
-
-- worldspawn_solid
-- worldspawn_base
-- group_solid
-
-You can expect them to work out of the box and not require changing, so they can be left in the `/addons/qodot` folder and updated as needed.
-
-## Adding FGDs to your Trenchbroom game config
-Open the `config_folder.tres` resource and add a new item to the _Fgd Files_ array. Add the FGD you made by dragging and dropping, or by using the folder selection button.
-
-Note
-{: .label .label-blue }
-Make sure to save your FGD resource first by clicking the save icon in the top right, or by pressing Ctrl + S with any scene open.
-
-Click _Export File_ again.
-
-Now you can open Trenchbroom, or go to File → Refresh Entity Definitions if you already have it open.
-
-Note
-{: .label .label-blue }
-If you get a Trenchbroom error about incomplete strings, make sure the *Fgd Name* on your own FGD is not “Qodot”.
-
-Note
-{: .label .label-blue }
-An error can occur if any entity definitions are missing a classname.
-
-![](../images/entity-definitions-missing-classname.PNG)
-
-You should be able to see more entity definitions in the entity collections list. This means your FGD made it into Trenchbroom successfully!
-
-If you already have entities in your FGD, switching to your FGD should show your list of entities in the entity browser.
-
-![](../images/fgd-success.png)
-
-
-# Creating new Entities
+# Creating Entity Resources
 
 In Qodot, you define new types of entities by creating a new .tres resource file. Qodot provides 3 resource presets for this:
 
@@ -122,11 +64,9 @@ Either will take you to the resource search screen. Here you can type in the fol
 - solidclass
 - baseclass
 
-What follows is a breakdown of each property in the Inspector when editing one of the three main class types.
+# Point and Class Resource Properties
 
-## Base Class Properties
-
-These properties are shared by Point and Solid classes. Base Class only exists as a template for other classes, if you're looking for an ECS-like approach to sharing properties.
+These properties are shared by Point and Solid classes.
 
 **Classname** - The name for this class in Trenchbroom.
 
@@ -229,7 +169,6 @@ Concave allows for concave brush geometry, or if you chose Entity and want a sin
 
 Although `QodotFGDSolidClass` is a class you can extend from, this is meant as a Qodot internal to build solid classes. This does not extend QodotEntity, and will not give you access to `properties`.
 
-
 # Class Property Data Types
 
 As shown earlier in this page, you can define properties for entities in the Class Properties dictionary. The "key" for each dictionary entry should be a String. The "value" can only be one of these 8 data types:
@@ -265,6 +204,8 @@ The default value can be the previous data type, or even `null`. It is not read 
 # Accessing Class Properties in Code
 
 See [Scripting Entities](scripting-entities.md).
+
+-----
 
 # Models in Trenchbroom
 You can display a model in TrenchBroom over a Point Class definition. You can then set up the equivalent model in Godot.
