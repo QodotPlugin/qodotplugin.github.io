@@ -2,11 +2,12 @@
 layout: default
 title: Scripting Entities
 nav_order: 8
+parent: Entities
 ---
 
 # Writing Code for Entities
 
-This guide covers how to add functionality to your entities in GDScript.
+This guide covers how to add functionality to your entities in GDScript for Godot 3.X.
 
 Read [Entities](https://qodotplugin.github.io/docs/entities.html) to learn about creating entities, and updating FGD and CFG files to include new entity definitions.
 
