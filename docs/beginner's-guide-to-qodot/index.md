@@ -13,9 +13,7 @@ Welcome! If you get stuck at any time, feel free to ask us on the [Qodot Discord
 
 You should have the latest stable version of both [Trenchbroom](https://trenchbroom.github.io/) and [Godot Engine](https://godotengine.org/) installed.
 
-It helps to know the basics of navigating Godot and Trenchbroom. You can read about getting started with these programs on their official docs.
-
-The [Official Godot Docs](https://docs.godotengine.org/en/stable/getting_started/step_by_step/intro_to_the_editor_interface.html) and the [Trenchbroom Manual](https://trenchbroom.github.io/manual/latest/#startup) both have usage guides to get you familiar with these programs.
+The [Official Godot Docs](https://docs.godotengine.org/en/stable/getting_started/step_by_step/intro_to_the_editor_interface.html) and the [Trenchbroom Manual](https://trenchbroom.github.io/manual/latest/#startup) have guides to get you familiar with both programs.
 
 The [Additional Resources](../additional-resources.html) page has a list of resources to learn more about using Godot and Trenchbroom if you get stuck.
 
