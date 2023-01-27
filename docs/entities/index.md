@@ -5,9 +5,7 @@ nav_order: 7
 ---
 
 # Entities
-Entities tie Godot functionality to 3D positions and specially-marked brushes in your map file.
-
-This guide covers how to add entities to your Trenchbroom game config, and how to add Godot functionality to those entities.
+Entities tie Godot functionality to 3D positions and marked brushes in your map file.
 
 1. TOC
 {:toc}
@@ -74,8 +72,6 @@ You can expect them to work out of the box and not require changing, so they can
 ## Adding FGDs to your Trenchbroom game config
 Open the `config_folder.tres` resource and add a new item to the _Fgd Files_ array. Add the FGD you made by dragging and dropping, or by using the folder selection button.
 
-![](https://codahosted.io/images/77T7fADkTg/blobs/bl-FzkbKV9nbb/04e6eb13407c60ff95322a0627a1dde76f89973d022315763f2abafcdf9630df2514565ef2d63dc21e5cfa9427e932f9eda3a067b1b132b17695f59704c268aeabe7fd8bb3d27fee23ab7cc49899ccc9ec875cf8a1a815d1623d4dbdd02795460e8ac106)
-
 Note
 {: .label .label-blue }
 Make sure to save your FGD resource first by clicking the save icon in the top right, or by pressing Ctrl + S with any scene open.
@@ -96,37 +92,10 @@ An error can occur if any entity definitions are missing a classname.
 
 You should be able to see more entity definitions in the entity collections list. This means your FGD made it into Trenchbroom successfully!
 
-![](https://codahosted.io/images/77T7fADkTg/blobs/bl-yzq2y_LQzl/23eb7ddfe36250e9740bc5d9077f6641e0f54f06c4a9b81b386cbe5a29e874d2a647a967fa01e3b922e8bba1cfac00fdac0eb64540a1e5e0dc50bd233398cd9d8e10bd9bfed11b02e10071f72c5b1acc8990de95a1e2af4a5469f723893a646c3c2aeb63)
-
 If you already have entities in your FGD, switching to your FGD should show your list of entities in the entity browser.
-
-![](https://codahosted.io/images/77T7fADkTg/blobs/bl-XB0MYn9qnD/a4a1cd0ffa6043ec43d13c3358b7c57fe3f07d3e4f154696a5e6cadabc9aad17a6fa1c1953455841bc66f15b2c1d779af4a3dacdb255c47ec983bd20b43776f73d5dffd867a45d87c5f3239d589109a3fc5df7fd775b204f9387bd16701e72a1d201c44c)
-
-## Adding FGDs to a QodotMap
-This final step only applies when setting up a new QodotMap in a Godot scene.
- 
-In your QodotMap node, open the _Entity Fgd_ array_._ Although it’s taken by Qodot.fgd by default, you can replace it with your own FGD file.
-
-Alternatively, you can open Qodot.fgd's _Base Fgd Files_ array and add your FGD there. Either works fine. Here's an example of me doing the latter:
-![](../images/fgd-base-add.png)
-
-Build the map, your point entity should show up!
 
 ![](../images/fgd-success.png)
 
-Once you've added your FGD to a QodotMap once, that QodotMap will update its entity definitions with your FGD resource.
-
-## Updating your FGD
-
-When you end up making more entities and need to update your FGD, here's what needs doing:
-
-1. Add entity definitions to your FGD
-2. Save your FGD resource
-3. Open `config_folder.tres` and check that sure your FGD is on the FGD list.
-4. Click Export File in the Inspector
-5. Press <kbd>F6</kbd> in Trenchbroom
-
-Your new entity definition should show up.
 
 # Creating new Entities
 
@@ -292,36 +261,7 @@ The default value can be the previous data type, or even `null`. It is not read 
 
 # Accessing Class Properties in Code
 
-To access class properties in code, ensure your entity `extends QodotEntity`, then access its `properties` variable.
-
-The `properties` dictionary will feature the same keys you set earlier in Class Properties. The value data types will also match, but their contents will be changed to match what you set in your map file.
-
-For example, setting the `"respawn_time"` of a pickup entity to 60 seconds will return 60 when accessing `properties["respawn_time"]` in code.
-
-For safety, you can check for these properties using `if "key_name" in properties:` and *then* access them with `properties["key_name"]`.
-
-## Full example
-
-If you have a point light entity with a "color" key and a Color value in the class properties, your code could look like this to apply the color to your light:
-
-```gdscript
-extends QodotEntity
-
-# This variable is static-typed so I get code autocomplete.
-# I want to code like it already exists, even though it's created at runtime.
-var light: OmniLight
-
-func _ready:
-	light = OmniLight.new()
-	add_child(light)
-	# Optional step: prevent errors if the property doesn't exist.
-	if "color" in properties:
-		# Assign the value read from the map file to this node's property
-		light.light_color = properties["color"]
-
-```
-
-In general, instance complex nodes in code, so you don't lose access to the properties dictionary. You can do this for .tscn files too if they have no script on the root. If there is a script on the .tscn root, you can also instance the entire .tscn file (script and all) as a child added through code, as shown above.
+See [Scripting Entities](scripting-entities.md).
 
 # Models in Trenchbroom
 You can display a model in TrenchBroom over a Point Class definition. You can then set up the equivalent model in Godot.
