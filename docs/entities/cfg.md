@@ -2,13 +2,14 @@
 layout: default
 title: Game Definitions
 nav_order: 7
+parent: Entities
 ---
 
 # Game Definitions
 
 A game definition (also known as a .cfg file) is a manifest that points to the location of [FGDs](fgd.md) and [Textures](../textures.md) used by your project. They are used by editors like [Trenchbroom](https://trenchbroom.github.io/) to separate the available entities and textures of different games.
 
-It is highly recommended you create a game definition for your Godot project to best integrate it with Trenchbroom.
+It is highly recommended you create a game definition for your Godot project to best integrate it with Trenchbroom and other editors.
 
 1. TOC
 {:toc}
@@ -17,7 +18,9 @@ It is highly recommended you create a game definition for your Godot project to 
 
 On a new installation of Qodot, two .tres files are provided in the folder `res://addons/qodot/game_definitions/trenchbroom`.
 
-To generate a new definition from scratch, double-click `qodot_trenchbroom_config_folder.tres` to open it in the Inspector.
+To generate a new game definition, double-click `qodot_trenchbroom_config_folder.tres` to open it in the Inspector.
+
+Read [Config Folder Properies](#config-folder-properties) to see the options available when creating a game definition.
 
 ## Setting Trenchbroom Game Path
 
@@ -58,7 +61,7 @@ A filepath that should point to your computer's Trenchbroom installation. This l
 | macOS | TrenchBroom.app/Contents/Resources |
 | Linux | <prefix>/share/trenchbroom, where <prefix> is the installation prefix. |
 
-If you don't have write access to your installation folder, you can also use the user data folder for your OS:
+If you can't write to your installation folder, you can also use the user data folder for your OS:
 
 | Platform | Location |
 | -------- | ---------|
@@ -68,7 +71,7 @@ If you don't have write access to your installation folder, you can also use the
 
 **Game Name**
 
-The name that becomes associated with the map file, and the name that appears in the Trenchbroom games list. Defaults to "Qodot".
+The name associated with new map files for your game, and the name that appears in the Trenchbroom games list. Defaults to "Qodot".
 
 Note
 {: .label .label-blue }
@@ -84,7 +87,7 @@ Your project needs an `icon.png` file to generate a game definition. If one is m
 
 **Game Config File**
 
-See [Config File Properties](#config-file-properties) for more information. Editing this file is not necessary unless you need to include brush tags or face tags.
+See [Config File Properties](#config-file-properties) for more information. Editing this file is not necessary unless you need to include new brush tags or face tags.
 
 **FGD Files**
 
