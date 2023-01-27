@@ -2,7 +2,28 @@
 layout: default
 title: FGD Files
 nav_order: 7
+parent: Entities
 ---
+
+# FGD Files
+
+FGD (or Forge Game Data) is a data structure originated in Quake for storing entities.
+
+A game definition needs an FGD to place point entities, convert brushes to brush entities, and inherit components from base entities.
+
+It is recommended you create a new FGD for your Godot project to go with your game definition.
+
+## Creating a new FGD
+
+1. Right click the FileSystem and click New Resource.
+2. Search for "FGDFile" and select it.
+3. Name the file, retaining the .tres suffix.
+
+It helps to add "fgd" to the name your FGD resources for clarity.
+
+## Editing the FGD
+
+Double click the FGD resource in the FileSystem to open up a window in the Inspector.
 
 ## Adding new entity definitions
 
