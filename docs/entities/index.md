@@ -2,10 +2,13 @@
 layout: default
 title: Entities
 nav_order: 7
+has_children: true
 ---
 
 # Entities
 Entities tie Godot functionality to 3D positions and marked brushes in your map file.
+
+This page is a WIP, currently in the process of being broken into succinct subpages.
 
 1. TOC
 {:toc}
