@@ -29,6 +29,12 @@ If you need help during any step of the process, you can reach out to these comm
 Most quirks, setup, and explanations of Trenchbroom’s features are in text through the Trenchbroom manual:
 [https://trenchbroom.github.io/manual/latest/](https://trenchbroom.github.io/manual/latest/)
 
+## Other Editors
+
+Technically, other editors can be configured to support user-made game definitions with Qodot.
+
+[QuakeWiki](https://quakewiki.org/wiki/Mapping_tools) provides a list of mapping tools for Quake.
+
 ## Video Tutorials
 
 [dumptruck_ds's Tutorial Series: Quake Mapping in Trenchbroom ](https://youtu.be/gONePWocbqA?list=PLgDKRPte5Y0AZ_K_PZbWbgBAEt5xf74aE)
