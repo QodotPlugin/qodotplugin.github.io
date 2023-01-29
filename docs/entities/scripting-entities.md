@@ -5,28 +5,33 @@ nav_order: 8
 parent: Entities
 ---
 
-# Writing Code for Entities
+# Scripting Entities
 
 This guide covers how to add functionality to your entities in GDScript for Godot 3.X.
 
-Read [Entities](https://qodotplugin.github.io/docs/entities.html) to learn about creating entities, and updating FGD and CFG files to include new entity definitions.
 
 1. TOC
 {:toc}
 
-## Syntax Disclaimer
+# Prerequisites
+
+You should know how to create entity definitions. Read [Creating Entities](https://qodotplugin.github.io/docs/creating-entities.html) for more information.
+
+# Syntax Disclaimer
 
 This guide currently only covers Godot 3.X GDScript syntax. In the future Godot 4.X GDScript syntax will be available. [You can contribute your own translations of these examples on GitHub](https://github.com/QodotPlugin/qodotplugin.github.io/issues/new).
 
-## Adding a script to an entity
+# Adding a script to an entity
 
-Double click an entity definition in the FileSystem, and look for Script Class in the Inspector.
+To add a script to an entity, double click your entity definition in the FileSystem to open it in the Inspector.
 
-Click on new script and pick a language.
+Go to the Script Class property. You can either click on New Script and pick a language, or drag a script file (.gd, .cs, .gdnative) to the resource slot.
 
-## Minimum code
+New script saves a script subresource to your entity definition.
 
-Here is the required code for a user script extending a point or brush class:
+## Point classes
+
+Here is the required code for a user script extending a default point class:
 
 ```
 extends Spatial
@@ -34,21 +39,38 @@ extends Spatial
 export(Dictionary) var properties
 ```
 
-To extend other nodes like `Area` or `AudioStreamPlayer`:
+To extend other nodes like `Light` or `AudioStreamPlayer`:
 
 1. Edit the entity definition's Node Class in the Inspector
 2. Replace `extends Spatial` with the same node name
 
 ## Brush classes
 
-For brush classes, any node that inherits `CollisionObject` is valid, as long as it can accept a child CollisionShape. Some common nodes include:
+Here is the required code for a user script extending a default brush class:
+
+```
+extends StaticBody
+
+export(Dictionary) var properties
+```
+
+To extend other nodes like `Area` or `RigidBody`:
+
+1. Edit the entity definition's Node Class in the Inspector
+2. Replace `extends StaticBody` with the same node name
+
+A brush class can extend any node that inherits `CollisionObject`. These nodes include:
 
 - `Area`
 - `StaticBody`
 - `RigidBody`
 - `KinematicBody`
+- `VehicleBody`
+- `DynamicBone`
 
-MeshInstance and CollisionShape children are automatically added to all brush entities. They can be disabled by changing Build Visuals to false, and Collision Shape Type to None in the solid class definition.
+Other node types will make its child CollisionShape redundant.
+
+The rest of this guide applies to both entity types.
 
 ## Signals
 
@@ -66,7 +88,9 @@ func _on_body_entered(body):
 	print(body)
 ```
 
-Remember to update your entity definition's Node Class with a name that matches your `extends`.
+Note
+{:label :label-blue}
+If your signals aren't sending, check that you've updated your entity definition's Node Class with a name that matches your `extends`, and that you've rebuilt your map. Make sure that any contact reporting properties are set as needed at runtime, using the `_ready()` function.
 
 ## Groups
 

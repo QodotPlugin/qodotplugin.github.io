@@ -7,13 +7,31 @@ parent: Entities
 
 # FGD Files
 
-FGD (or Forge Game Data) is a data structure originated in Quake for storing entities.
+FGD (or Forge Game Data) is a data structure used by Quake for storing data about [Entities](index.md).
 
-A game definition needs an FGD to place point entities, convert brushes to brush entities, and inherit components from base entities.
+1. TOC
+{:toc}
 
-It is recommended you create a new FGD for your Godot project to go with your game definition.
+# Class Reference
 
-## Creating a new FGD
+See [Class Reference for FGD](../class-reference.md#fgd).
+
+# How Qodot uses FGD files
+
+FGD files are used in two ways by Qodot:
+
+1. Qodot writes FGD files to your Trenchbroom games folder when you create a [Game Definition](/game-definition.md).
+2. QodotMap reads through all FGDs in the FGD list, looking for matching entity classnames in the map file. This is how Qodot matches map entities to Godot nodes and scenes.
+
+# Creating a new FGD
+
+This guide will cover how to create a new FGD file.
+
+## Prerequisites
+
+You'll need to provide [Entity Definitions](/creating-entities.md), otherwise there is no point in having an FGD for your [Game Definition](/game-definition.md).
+
+## Steps
 
 1. Right click the FileSystem and click New Resource.
 2. Search for "FGDFile" and select it.
@@ -21,7 +39,7 @@ It is recommended you create a new FGD for your Godot project to go with your ga
 
 It helps to add "fgd" to the filename your FGD resources for clarity.
 
-## Editing the FGD
+# Editing an FGD
 
 Double click the FGD resource in the FileSystem to open up a window in the Inspector. See [FGD Properties](#fgd-properties) for more info on each property.
 
@@ -39,26 +57,10 @@ All FGDs start with some entities by default, but some are necessary to build ma
 
 When saving the current scene with <kbd>Ctrl</kbd> + <kbd>S</kbd>, all affected resources are also saved. You can save just the FGD as it's open by clicking the Save icon at the top of the Inspector.
 
-## Updating a Game Definition with a modified FGD
+# Adding an FGD to a Game Definition
+
+If you don't have a game definition, read the [Game Definition](/game-definition.md) page to learn how to create one.
 
 1. Open `config_folder.tres` and add your FGD to the FGD list
 2. Click Export File in the Inspector
 3. Press <kbd>F6</kbd> in Trenchbroom to refresh entity collections
-
-# FGD Properties
-
-**Fgd Name**
-
-Reserves a namespace for your entity definitions in Trenchbroom under this name.
-
-Note
-{: .label .label-blue }
-Trenchbroom will throw an error if you use two FGDs with the same Fgd Name. If you have Qodot.fgd as a base, make sure to change your own Fgd Name to something else.
-
-**Entity Definitions**
-
-An array containing Entity Definition resources.
-
-Note
-{: .label .label-blue }
-Trenchbroom will fail to load any entity definitions missing a classname.

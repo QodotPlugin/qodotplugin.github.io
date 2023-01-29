@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Game Definitions
+title: Game Definition
 nav_order: 7
 parent: Entities
 ---
 
-# Game Definitions
+# Game Definition
 
-A game definition (also known as a .cfg file) is a manifest that points to the location of [FGDs](fgd.md) and [Textures](../textures.md) used by your project. They are used by editors like [Trenchbroom](https://trenchbroom.github.io/) to separate the available entities and textures of different games.
+A game definition (.cfg) is a file that points to the location of [FGDs](fgd.md) and [Textures](../textures.md) used in your project. They are used by editors like [Trenchbroom](https://trenchbroom.github.io/) to separate the entities and textures available to different games.
 
 It is highly recommended you create a game definition for your Godot project to best integrate it with Trenchbroom and other editors.
 
