@@ -1,6 +1,36 @@
-# Warning
+# Class Reference
 
 This class reference is incomplete. You can help complete it by [making an issue on GitHub](https://github.com/QodotPlugin/qodotplugin.github.io/issues/new) or [contributing to the class reference directly](https://github.com/QodotPlugin/qodotplugin.github.io).
+
+# QodotTrenchbroomConfigFolder
+
+**Export File**
+
+**Trenchbroom Games Folder**
+
+**Game Name**
+
+**Icon**
+
+**Fgd Files**
+
+**Brush Tags**
+
+**Face Tags**
+
+**Face Attrib Surface Flag**
+
+Creates a map-wide boolean that can be applied to any face in Trenchbroom's face editor. Surface flags mark a face with a specific property, usually for rendering purposes.
+
+Quake 2 uses these for visual effects like "light", "warp", "moving", "nodraw", "sky", and more. Read more about Face Attributes in the [Trenchbroom Manual](https://trenchbroom.github.io/manual/latest/#face_attribute_editor).
+
+**Face Attrib Content Flag**
+
+Creates a map-wide boolean that can be applied to any face in the face editor. Content flags mark a brush with a specific property, usually for gameplay.
+
+Quake 2 uses these for gameplay elements like "playerclip", "monsterclip", "water", "lava", "slime", "mist", and more. Read more about Face Attributes in the [Trenchbroom Manual](https://trenchbroom.github.io/manual/latest/#face_attribute_editor).
+
+![](https://trenchbroom.github.io/manual/latest/images/FaceAttribsEditor.png)
 
 # QodotFGDFile
 
@@ -20,9 +50,7 @@ Note
 {: .label .label-blue }
 Trenchbroom will fail to load any entity definitions missing a classname.
 
-# QodotFGD*Class
-
-These properties are shared by Point and Solid classes.
+# QodotFGDClass
 
 **Classname** - The name for this class in Trenchbroom.
 
@@ -40,30 +68,17 @@ This determines the parent entities for this class, where this entity gets all t
 
 Once exported to the Trenchbroom game config, the dictionary values are written by editing entities in Trenchbroom, and read by accessing `properties` on a QodotEntity once the map is built.
 
-To add a new class property to an entity:
-
-1. Open the dictionary.
-2. Click the first pencil by "New Key: [null]" and select "String" as the key data type.
-3. Name your property in the key text field, no spaces.
-4. Click the second pencil by "New Value: [null]".
-5. Select any valid data type. Read [Class Property Data Types](#class-property-data-types) for more information.
-6. Change the value to your desired default, or leave it blank.
-7. Click "Add new key/value pair".
-8. Re-export your FGD once all class properties are added.
-
-You can also set default values for your properties, by repeating this process in Meta Properties, matching the key names and value datatypes from this dictionary.
+You can also set default values for your properties by repeating this process in Meta Properties, matching the key names and value datatypes from this dictionary.
 
 **Class Property Descriptions** - A dictionary of descriptions for each property, visible in Trenchbroom.
 
-Follow the same steps as adding class properties to add property descriptions. Ensure the description's key matches the property's key. Description values can only be strings.
+Ensure the description's key matches the property's key. Description values can only be strings.
 
 **Meta Properties** - Editor-specific properties, such as the default color and size used to represent this class.
 
 Add an entry with a matching key to an existing property, set the value to the same data type, and whatever value is present will become the default. Only one meta property is read per class property.
 
 **Node Class** - The type of Godot node to spawn at this location.
-
-This doesn't fully control the type of node that Godot spawns, read on to learn more about using Node Class with Point Classes and Solid Classes.
 
 ## QodotFGDPointClass
 
