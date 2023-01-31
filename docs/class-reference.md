@@ -1,8 +1,54 @@
+---
+layout: default
+title: Class Reference
+nav_order: 20
+---
+
 # Class Reference
 
 This class reference is incomplete. You can help complete it by [making an issue on GitHub](https://github.com/QodotPlugin/qodotplugin.github.io/issues/new) or [contributing to the class reference directly](https://github.com/QodotPlugin/qodotplugin.github.io).
 
-# QodotTrenchbroomConfigFolder
+1. TOC
+{:toc}
+
+# Trenchbroom Settings
+
+These classes enable various Trenchbroom features for use in your game.
+
+## TrenchbroomTag
+
+**Tag Name**
+
+**Tag Attributes**
+
+An array of strings determining the in-editor appearance of brushes/faces that match this tag.
+
+Current available attributes:
+- `_transparent` makes the face semi-transparent
+
+**Tag Match Type**
+
+Detemines how the tag is matched.
+
+Type | Description
+--|--
+`TEXTURE` | Tag applies to any face with a texture matching the texture name.
+`CONTENT_FLAG` | Tag applies to any brush with a content flag matching the tag pattern.
+`SURFACE_FLAG` | Tag applies to any face with a surface flag matching the tag pattern.
+`SURFACE_PARAM` | Tag applies to any face with a special surface param. [See Trenchbroom Manual for more info.](https://trenchbroom.github.io/manual/latest/#special_brush_face_types)
+`CLASSNAME` | Tag applies to any brush entity with a class name matching the tag pattern.
+
+**Tag Pattern**
+
+A string that filters the specific flag, param, or classname to use. `*` can be used as a wildcard to include multiple options.
+
+Example: `trigger_*` for the Classname match type will apply to all brush entities with the `trigger_` prefix.
+
+**Texture Name**
+
+A string that filters the specific texture to apply this tag with. Only applies for the Texture tag match type.
+
+## QodotTrenchbroomConfigFolder
 
 **Export File**
 
@@ -32,7 +78,11 @@ Quake 2 uses these for gameplay elements like "playerclip", "monsterclip", "wate
 
 ![](https://trenchbroom.github.io/manual/latest/images/FaceAttribsEditor.png)
 
-# QodotFGDFile
+# Trenchbroom and Qodot Shared
+
+These entities are read between both Trenchbroom and Qodot to represent the same core data.
+
+## QodotFGDFile
 
 **Fgd Name**
 
@@ -50,7 +100,7 @@ Note
 {: .label .label-blue }
 Trenchbroom will fail to load any entity definitions missing a classname.
 
-# QodotFGDClass
+## QodotFGDClass
 
 **Classname** - The name for this class in Trenchbroom.
 
@@ -80,7 +130,7 @@ Add an entry with a matching key to an existing property, set the value to the s
 
 **Node Class** - The type of Godot node to spawn at this location.
 
-## QodotFGDPointClass
+### QodotFGDPointClass
 
 **Scene File** - The .tscn Godot scene that spawns in place of QodotEntity. The easiest way to spawn a specific node at a specific point.
 
@@ -102,7 +152,7 @@ If you want to create an RigidBody node without a .tscn using a point entity, ex
 
 You can get around this by extending `QodotEntity` and using `var body = RigidBody.new()` and `add_child(body)` to add more complex nodes as children, while still having access to the `properties` dictionary. This can be repeated for other children like MeshInstance and CollisionShape.
 
-## QodotFGDSolidClass
+### QodotFGDSolidClass
 
 Solid classes can have multiple brushes (select multiple brushes when making the entity) so these properties apply to the solid class as a single object, not to each brush individually.
 
