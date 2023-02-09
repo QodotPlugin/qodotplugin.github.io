@@ -52,17 +52,31 @@ A string that filters the specific texture to apply this tag with. Only applies 
 
 **Export File**
 
+Creates a new subfolder in the Trenchbroom games folder, named after your Game Name. It also adds (or updates) files to the subfolder: A GameConfig.cfg file, an Icon.png, and all [FGDs](entities/fgd.md) linked in the Fgd Files array.
+
 **Trenchbroom Games Folder**
+
+The system location of your Trenchbroom games folder. This is either found inside your Trenchbroom installation, or your user folder. See [Config Folder Propeties](https://qodotplugin.github.io/docs/entities/game-definition#config-folder-properties) for common locations on various OSes.
 
 **Game Name**
 
+Unique identifier for your project in Trenchbroom's "select game" folder. Game names *can* contain spaces.
+
 **Icon**
+
+Pulls from your project's `res://icon.png` file by default.
 
 **Fgd Files**
 
+A list of all [FGD](entities/fgd.md) files to include in the [Game Definition](entities/game-definition.md).
+
 **Brush Tags**
 
+A lookup pattern for all brush entity classnames in the map to apply editor hints, such as `_transparent`.
+
 **Face Tags**
+
+A lookup pattern for all texture names in the map to apply editor hints, such as `_transparent`.
 
 **Face Attrib Surface Flag**
 
@@ -102,17 +116,17 @@ Trenchbroom will fail to load any entity definitions missing a classname.
 
 ## QodotFGDClass
 
-**Classname** - The name for this class in Trenchbroom.
+**Classname** - The name for this class in Trenchbroom. Cannot contain spaces.
 
-**Description** - A short description that displays in Trenchbroom when this entity is selected.
+**Description** - A short description that displays in Trenchbroom's entity browser when this entity is selected.
 
 **Qodot Internal** - Hides the entity in Trenchbroom's entity browser.
 
-Qodot can still refer to this entity for building other entities (like base entities). Base Entities are already hidden in Trenchbroom by default, for most situations you can leave this off.
+Qodot can still refer to this entity for building other entities (like base entities). Base Entities are already hidden in Trenchbroom by default, in most cases you can leave this off.
 
 **Base Classes** - An array of template entities to inherit properties from.
 
-This determines the parent entities for this class, where this entity gets all the class properties, meta properties, and property descriptions from its parents.
+All base classes placed here will give the same class properties, meta properties, and property descriptions to the current entity definition.
 
 **Class Properties** - A dictionary of properties.
 
