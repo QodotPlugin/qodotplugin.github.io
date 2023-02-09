@@ -158,6 +158,10 @@ Possible key/value pairs include:
 
 **Node Class** - The type of Godot node to spawn at this location.
 
+**Transient Node** - Determines if QodotMap calls `queue_free()` on this node when the map finishes buliding. Removing transient nodes is the last post attach step when building a map. Transient nodes are not given priority over other entities during the build.
+
+This value should stay unchecked unless it is desirable to remove this node after building the map.
+
 ### QodotFGDPointClass
 
 A single point for an entity.
