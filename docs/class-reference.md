@@ -17,7 +17,11 @@ These classes enable various Trenchbroom features for use in your game.
 
 ## TrenchbroomTag
 
+A matching filter that identifies type of brushes and textures and applies in-editor appearance. Does not affect in-game appearance or in-game functionality.
+
 **Tag Name**
+
+Name to describe this tag. Not used as the matching pattern.
 
 **Tag Attributes**
 
@@ -72,11 +76,11 @@ A list of all [FGD](entities/fgd.md) files to include in the [Game Definition](e
 
 **Brush Tags**
 
-A lookup pattern for all brush entity classnames in the map to apply editor hints, such as `_transparent`.
+A lookup pattern for all brush entity classnames in the map to apply editor hints, such as `_transparent`. Only affects appearance in Trenchbroom, does not apply to making materials transparent in Godot.
 
 **Face Tags**
 
-A lookup pattern for all texture names in the map to apply editor hints, such as `_transparent`.
+A lookup pattern for all texture names in the map to apply editor hints, such as `_transparent`. Only affects appearance in Trenchbroom, does not apply to making materials transparent in Godot.
 
 **Face Attrib Surface Flag**
 
@@ -130,6 +134,10 @@ All base classes placed here will give the same class properties, meta propertie
 
 **Class Properties** - A dictionary of properties.
 
+Keys must be of type String. Keys are read as the property name in Trenchbroom.
+
+Values must be of the following types:
+
 Once exported to the Trenchbroom game config, the dictionary values are written by editing entities in Trenchbroom, and read by accessing `properties` on a QodotEntity once the map is built.
 
 You can also set default values for your properties by repeating this process in Meta Properties, matching the key names and value datatypes from this dictionary.
@@ -138,25 +146,27 @@ You can also set default values for your properties by repeating this process in
 
 Ensure the description's key matches the property's key. Description values can only be strings.
 
-**Meta Properties** - Editor-specific properties, such as the default color and size used to represent this class.
+**Meta Properties** - Editor-specific properties, such as the default color and size used to represent this class. Primarily used by point classes.
 
-Add an entry with a matching key to an existing property, set the value to the same data type, and whatever value is present will become the default. Only one meta property is read per class property.
+Keys must be of type String. Values must be a type determined by the key name.
+
+Possible key/value pairs include:
+| Key String | Value type |
+|------|-----|
+| size | AABB |
+| color | Color |
 
 **Node Class** - The type of Godot node to spawn at this location.
 
 ### QodotFGDPointClass
 
+A single point for an entity.
+
 **Scene File** - The .tscn Godot scene that spawns in place of QodotEntity. The easiest way to spawn a specific node at a specific point.
 
 Scene File takes priority over every other option here, especially if there's already a script attached to the .tscn file.
 
-**Script Class** - The script to attach to your entity's root node.
-
-This is ideal for spawning nodes without a .tscn file. If you want to access this entities' Class Properties, add a script here that `extends QodotMap` and accesses `properties["key_name"]`.
-
-You can extend other Spatial-derived node types too, and add necessary children (CollisionShape, MeshInstance) through code, but you lose out on the ablity to access `properties`. You can fix this by always choosing to extend `QodotEntity` and adding more complex nodes like Area and RigidBody as children through code.
-
-Make sure to update Node Class so it matches the the script's `extends`!
+**Script Class** - The script to attach to your entity's root node. See [Scripting Entities](entities/scripting-entities) for details.
 
 **Node Class** - The type of node to spawn at this location. This property should match the `extends` of your Script Class. You can ignore this property if you're using a Scene File.
 
@@ -168,7 +178,7 @@ You can get around this by extending `QodotEntity` and using `var body = RigidBo
 
 ### QodotFGDSolidClass
 
-Solid classes can have multiple brushes (select multiple brushes when making the entity) so these properties apply to the solid class as a single object, not to each brush individually.
+Solid classes can have multiple brushes (select multiple brushes before creating the entity). These properties apply to the solid class as a single node, with each brush built as one CollisionShape child.
 
 **Spawn Type** - Changes how the QodotMap arranges these brushes in its node hierarchy.
 
@@ -178,25 +188,23 @@ There are 4 settings:
 - Entity
 - Group
 
-**Build Visuals** - Makes the solid class visible when checked.
+Worldspawn contributes this entity's brushes to a primary StaticBody node. Intended for the Worldspawn definition only.
 
-You may want to disable this for invisible triggers and other gameplay-related solid classes.
+Worldspawn contributes this entity's brushes to a primary StaticBody node without overriding the original definition of Worldspawn.
 
-**Node Class** - Sets the node type of the solid class root.
+Group separates brushes into a new StaticBody node. Intended for grouped brushes.
 
-If you're adding a Script Class, this value should match the `extends` of the script.
+Entity separates brushes into a node separate from the primary StaticBody, supporting scripts and CollisionObject node types.
 
-Setting this to RigidBody and setting Spawn Type to Entity changes these brushes from static geometry into physics objects.
+**Build Visuals** - Builds a MeshInstance child for the solid class when checked. Does not build a MeshInstance child when unchecked.
 
-**Collision Shape Type** - Changes how collision is built.
+**Node Class** - Sets the node type of the solid class root. If you're adding a Script Class, this value should match the `extends` of the script. See [Scripting Entities](entities/scripting-entities).
+
+**Collision Shape Type** - Changes the type of CollisionShape resource used for CollisionShape children.
 
 - None
 - Convex
 - Concave
-
-Convex creations a CollisionShape for each brush, depending on the Spawn Type. Entity creates an outer hull, Group creates individual shapes for each brush. Convex is a good bet for most situations.
-
-Concave allows for concave brush geometry, or if you chose Entity and want a single concave CollisionShape to make up your solid class. 🚧
 
 **Script Class** - The script applied to the entity's root.
 
@@ -226,9 +234,7 @@ You can define properties for entities in the Class Properties dictionary. The "
 
 ## Note on Arrays
 
-When you add an Array as a class property, it must contain other Arrays, with each Array creating one flag. These flag Arrays must have 3 items: Name, Value, and Default value.
-
-Name must be a String.
+Arrays create flags. When you add an Array as a class property, it must contain other Arrays, each Array creating one flag. These flag Arrays must have 3 items: Name, Value, and Default value. Name must be a String.
 
 Value is traditionally a bool, but it can also be a float, int, or String. Qodot parses all these data types as Strings in the end, which will change how you will be [Accessing Class Properties in Code](#accessing-class-properties-in-code).
 
