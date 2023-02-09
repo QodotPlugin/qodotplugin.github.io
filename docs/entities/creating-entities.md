@@ -35,10 +35,10 @@ Find your new resource .tres file in the FileSystem dock and double click it. Th
 
 # Class Reference
 
-See [Class Refernece](../class-reference.md) to learn what each property of an entity definition resource does.
+See [Class Reference](../class-reference.md) to learn what each property of an entity definition resource does.
 
 # Seeing entity definitions in Trenchbroom
 
-To see the result of your entity definition, it needs to be in an [FGD](/fgd.md), then that FGD must be included when creating/updating a [Game Definition](/game-definition.md) for Trenchbroom. Once these are all satisifed, you should be able to view your entity definition in Trenchbroom.
+To access your new entity definition in Trenchbroom, it needs to be in an [FGD](/fgd.md). Trenchbroom can either be pointed to the exported FGD file externally, or by updating your [Game Definition](/game-definition.md) to include your FGD.
 
-Keep in mind that point entities are available in the entity browser when the FGD is enabled, but brush entities are only shown when right-clicking a brush to convert it to a brush entity.
+Keep in mind that point entities are available in the entity browser when the FGD is enabled, brush entities are only shown when right-clicking a brush to convert it to a brush entity. Base classes do not appear as they provide shared properties to other entities.
