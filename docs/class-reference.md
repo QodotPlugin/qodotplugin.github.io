@@ -152,9 +152,12 @@ Keys must be of type String. Values must be a type determined by the key name.
 
 Possible key/value pairs include:
 | Key String | Value type |
-|------|-----|
+| ---------- | ---------- |
 | size | AABB |
 | color | Color |
+| model | Dictionary |
+
+Flexible (assimp) model support in Trenchbroom is new as of [Trenchbroom 2022.2](https://github.com/TrenchBroom/TrenchBroom/releases/tag/v2022.2). Documentation for using Qodot with the new model system is still in progress. Read [Displaying Models for Entities](https://trenchbroom.github.io/manual/latest/#display-models-for-entities) for more information on model support and Trenchbroom's expression language.
 
 **Node Class** - The type of Godot node to spawn at this location.
 
