@@ -11,12 +11,12 @@ This is a list of caviats about the Qodot workflow that is likely to change the 
 ## Assets
 
 - Drop a .jpg or .png into your project to add new textures. See [Materials](materials.md) for more info.
-- Model support isn't as flexible as something like Source. Each point entity can only display one model in the Trenchbroom editor. See [Entities](entities.md) for more info.
+- Model support isn't as flexible as something like Source. Each point entity can only display one model in the Trenchbroom editor. See [Entities](docs/entities) for more info.
 
 ## Gameplay
-- With the default Qodot.fgd, you can turn off a brush's collision by making it a func_illusionary. You can add this definition to your own FGD to replicate this behaviour. See [Entities](entities.md) for more info.
+- With the default Qodot.fgd, you can turn off a brush's collision by making it a func_illusionary. You can add this definition to your own FGD to replicate this behaviour. See [Entities](docs/entities) for more info.
 - You can combine multiple QodotMap nodes in one Godot scene, and use this to instantiate repetitive/procedural geometry in your Godot scene.
-- If you want a feature from a specific game, like Source's `func_breakable_surf`, you'll need to implement it yourself using [Entities](entites.md), or refer to community repositories like [Qodot Entities on Github](https://github.com/RhapsodyInGeek/qodot-entities) for other's creations.
+- If you want a feature from a specific game, like Source's `func_breakable_surf`, you'll need to implement it yourself using [Entities](docs/entites), or refer to community repositories like [Qodot Entities on Github](https://github.com/RhapsodyInGeek/qodot-entities) for other's creations.
 
 ## Geometry
 
@@ -70,4 +70,4 @@ One option is to use Worldspawn Layers to collect brushes under a single StaticB
 
 See the Qodot demo scenes for an example of splitting brushes by Worldspawn Layers.
 
-You can also use Solid Classes to replicate the effect of Worldspawn Layers, but you'll lose the ability to tie additional Solid Class behaviour to any of its child brushes, without duplicating classes unnecessarily. See [Entities](entities.md) for more info on creating a Solid Class.
+You can also use Solid Classes to replicate the effect of Worldspawn Layers, but you'll lose the ability to tie additional Solid Class behaviour to any of its child brushes, without duplicating classes unnecessarily. See [Entities](docs/entities) for more info on creating a Solid Class.

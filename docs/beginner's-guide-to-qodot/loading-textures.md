@@ -39,7 +39,7 @@ Both the file path and texture name cannot contain UTF-8 characters or spaces.
 
 This is effective if you have multiple projects using Qodot, or if you need to use any entity definitions.
 
-1. Create a [Game Definition](../entities/cfg.html)
+1. Create a [Game Definition](../entities/game-definition.html)
 2. Open Trenchbroom
 3. Click "New Map"
 4. Go to "Preferences"
@@ -49,7 +49,7 @@ This is effective if you have multiple projects using Qodot, or if you need to u
 8. In Godot, set the Textures Dir of your QodotMap node to your /textures folder
 9. Click Build Map to see the results
 
-If you need more guidance on these steps, consider reading the page on [Game Definitions](../entities/cfg.html) to create a personalized Trenchbroom setup for your project.
+If you need more guidance on these steps, consider reading the page on [Game Definitions](../entities/game-definition.html) to create a personalized Trenchbroom setup for your project.
 
 # The Next Step
 
@@ -60,5 +60,5 @@ Here are some common next steps for developers:
 | Next step | Link |
 | :------------------------------------------------------------------ | :------------------------- |
 | Apply materials and shaders to brushes: | [Textures](../materials.md) |
-| Place Godot scenes using Trenchbroom: | [Entities](../entities.md) |
+| Place Godot scenes using Trenchbroom: | [Entities](../entities) |
 | Prepare a project for scaling up: | [Best Practices](../best-practices.md) |
