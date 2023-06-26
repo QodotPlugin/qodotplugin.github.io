@@ -213,9 +213,7 @@ Entity separates brushes into a node separate from the primary StaticBody, suppo
 - Convex
 - Concave
 
-**Script Class** - The script applied to the entity's root.
-
-Although `QodotFGDSolidClass` is a class you can extend from, this is meant as a Qodot internal to build solid classes. This does not extend QodotEntity, and will not give you access to `properties`.
+**Script Class** - The script applied to the entity's node when built.
 
 # Class Property Data Types
 
