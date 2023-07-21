@@ -20,7 +20,7 @@ On a new installation of Qodot, two .tres files are provided in the folder `res:
 
 To generate a new game definition, double-click `qodot_trenchbroom_config_folder.tres` to open it in the Inspector.
 
-Read [Config Folder Properies](#config-folder-properties) to see the options available when creating a game definition.
+Read [Config Folder Properties](#config-folder-properties) to see the options available when creating a game definition.
 
 ## Setting Trenchbroom Game Path
 
@@ -29,7 +29,7 @@ Once you setup and export your game definition folder, Trenchbroom will need a p
 To set your project directory for your game definition:
 1. Launch Trenchbroom
 2. Click "New Map..."
-3. Cick "Open preferences..."
+3. Click "Open preferences..."
 4. Find your game in the preferences list
 5. Click the "..." next to "Game Path"
 6. Select your Godot project folder from your file system
