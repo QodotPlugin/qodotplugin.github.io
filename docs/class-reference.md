@@ -52,7 +52,7 @@ Example: `trigger_*` for the Classname match type will apply to all brush entiti
 
 A string that filters the specific texture to apply this tag with. Only applies for the Texture tag match type.
 
-## QodotTrenchbroomConfigFolder
+## QodotTrenchbroomConfig
 
 **Export File**
 
