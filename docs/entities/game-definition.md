@@ -16,9 +16,9 @@ It is highly recommended you create a game definition for your Godot project to 
 
 ## Making a Game Definition Folder
 
-On a new installation of Qodot, two .tres files are provided in the folder `res://addons/qodot/game_definitions/trenchbroom`.
+On a new installation of Qodot, `qodot_trenchbroom_config.tres` is provided in the folder `res://addons/qodot/game_definitions`.
 
-To generate a new game definition, double-click `qodot_trenchbroom_config_folder.tres` to open it in the Inspector.
+To generate a new game definition, double-click `qodot_trenchbroom_config.tres` to open it in the Inspector.
 
 Read [Config Folder Properties](#config-folder-properties) to see the options available when creating a game definition.
 
@@ -57,15 +57,17 @@ A filepath that should point to your computer's Trenchbroom installation. This l
 
 | Platform | Location |
 | -------- | ---------|
-| Windows | The directory with the TrenchBroom executable, such as C:\Users\<username>\Documents\Trenchbroom\games\ |
+| Windows | Trenchbroom\games\ |
 | macOS | TrenchBroom.app/Contents/Resources |
-| Linux | <prefix>/share/trenchbroom, where <prefix> is the installation prefix. |
+| Linux | /share/trenchbroom |
 
-If you can't write to your installation folder, you can also use the user data folder for your OS:
+For Windows and Linux, this folder should be prefixed by where you unzipped/installed Trenchbroom to.
+
+If you can't write to your installation folder, you can also use the user data folder for your OS as shown belopw:
 
 | Platform | Location |
 | -------- | ---------|
-| Windows | C:\Users\<username>\AppData\Roaming\TrenchBroom|
+| Windows | %AppData%\Roaming\TrenchBroom |
 | macOS | ~/Library/Application Support/TrenchBroom |
 | Linux | ~/.TrenchBroom |
 
