@@ -5,38 +5,57 @@ nav_order: 4
 parent: Beginner's Guide to Qodot 
 ---
 
+{:toc}
+
+If you don't have any map files or textures, and want to fully setup your Godot project with your Trenchboom editor, read the page on [Trenchbroom Setup](qodotplugin.github.io/docs/beginner's-guide-to-qodot/trenchbroom-setup.html) first. Otherwise, continue reading.
+
 # Building Maps
 
-Assuming your map fits the list of supported .map formats, and has limited entities, this is the fastest way to get your map into Godot.
+## Building Basic Geometry
 
-- Add a .map file to your Godot project directory.
+- With the plugin [installed and enabled](https://qodotplugin.github.io/docs/beginner's-guide-to-qodot/), Add a .map file to your project. It will import as a visible resource in your FileSystem dock.
 
 ![](../../images/install-map.png)
 
-- Load it up from a QodotMap node.
+- Add a QodotMap node from the *Add Node* menu, or press <kbd>Ctrl</kbd> + <kbd>A</kbd> and type "QodotMap".
+
+- Select QodotMap, then go to the Inspector. Click the folder icon in the *Map File* property and choose your map file.
 
 ![](../../images/install-qodotmap.png)
 
-- Hit Full Build in the toolbar.
+- Hit Full Build in the toolbar. (If Full Build isn't visible, check you're running the C# build and press <kbd>Alt</kbd> + <kbd>B</kbd>.
 
 ![](../../images/install-fullbuild.png)
 
-Your map is now in Godot!
+Your map geometry is now in Godot!
 
 ![](../../images/install-final.png)
 
-Note
-{: .label .label-blue }
-If you don’t see QodotMap in your nodes list, make sure you have enabled Qodot in the Project → Project Settings -> Plugin window.
+### Build Troubleshooting
 
-If you want to display textures on your map geometry, read [Loading Textures in Trenchbroom](loading-textures.md).
+If your map isn't building, try the following solutions:
 
-If you don't have an original map, and you're trying to port a map instead, read the page on [Porting](../porting.md).
+- Check the console for errors and post a screenshot of your editor window to the community.
+- Check that your map or textures doesn't use spaces or UTF-8 exclusive characters.
 
-# Troubleshooting
+# Loading Textures
 
-If your map isn't building, one of the following is probably the case:
+This assumes your map already has textures. If you're starting from scratch, and want to unite your Godot project with your Trenchboom editor, read the page on [Trenchbroom Setup](qodotplugin.github.io/docs/beginner's-guide-to-qodot/trenchbroom-setup.html).
 
-- Somewhere in your filepath, there is a space(probably in texture names).
-- Somewhere in your filepath you are using UTF-8 characters
-- You are using different filetypes for your textures that aren't listed as allowed. Go into the QodotMap node, under the section Textures, make sure the field "Texture File Extensions" includes the file extensions for your texture. Not all texture file formats will work, as this is dependent upon what texture files Godot can use, though tga, png and jpeg should all work.
+## Using Loose Textures
+
+If your map already has textures, make sure your Godot project has access to the same folder names used in the map. You can copy the map's loose textures into a folder, such as `res://textures`.
+
+Then, set  *Base Textures Dir* to the folder with your map's loose textures.
+
+![image](https://github.com/QodotPlugin/qodotplugin.github.io/assets/47726614/41f6c99a-07a9-4fa6-a89f-ac06ce0b4b42)
+
+## Using WADs
+
+Add a .WAD file to your project. As long as Qodot enabled, it will be imported as a Godot resource. You can check its contents by double clicking the resource in FileSystem to reveal a Dictionary of textures.
+
+Select your QodotMap, then scroll down to *Texture WADS* and add an element to the Array.
+
+![image](https://github.com/QodotPlugin/qodotplugin.github.io/assets/47726614/8e6f4408-9c22-4636-b861-e775b76daa4d)
+
+Drag and drop the .WAD file onto the Array, or click *Load* and pick the .WAD file from the file browser.
