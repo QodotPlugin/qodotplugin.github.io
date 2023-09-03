@@ -7,7 +7,7 @@ parent: Beginner's Guide to Qodot
 
 {:toc}
 
-If you don't have any map files or textures, and want to fully setup your Godot project with your Trenchboom editor, read the page on [Trenchbroom Setup](qodotplugin.github.io/docs/beginner's-guide-to-qodot/trenchbroom-setup.html) first. Otherwise, continue reading.
+If you don't have any map files or textures, and want to fully setup your Godot project with your Trenchboom editor, read the page on [Trenchbroom Setup](https://qodotplugin.github.io/docs/beginner's-guide-to-qodot/trenchbroom-setup.html) first. Otherwise, continue reading.
 
 # Building Maps
 
@@ -40,7 +40,7 @@ If your map isn't building, try the following solutions:
 
 # Loading Textures
 
-This assumes your map already has textures. If you're starting from scratch, and want to unite your Godot project with your Trenchboom editor, read the page on [Trenchbroom Setup](qodotplugin.github.io/docs/beginner's-guide-to-qodot/trenchbroom-setup.html).
+This assumes your map already has textures. If you're starting from scratch, and want to unite your Godot project with your Trenchboom editor, read the page on [Trenchbroom Setup](https://qodotplugin.github.io/docs/beginner's-guide-to-qodot/trenchbroom-setup.html).
 
 ## Using Loose Textures
 
