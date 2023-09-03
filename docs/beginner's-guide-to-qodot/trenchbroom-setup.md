@@ -1,24 +1,18 @@
 ---
 layout: default
-title: Loading Textures in Trenchbroom
+title: Trenchbroom Setup
 nav_order: 5
 parent: Beginner's Guide to Qodot 
 ---
 
-# Loading Textures in Trenchbroom
-
-This guide covers managing textures between Godot and Trenchbroom, to allow brushes to build with textures.
-
-Read the Trenchbroom manual to learn more about applying textures to brushes in Trenchbroom.
-- [Applying textures in Trenchbroom](https://trenchbroom.github.io/manual/latest/#working_with_textures)
-- [Managing texture collections in Trenchbroom](https://trenchbroom.github.io/manual/latest/#texture_management)
+# Trenchbroom Setup
 
 1. TOC
 {:toc}
 
 # Using Generic
 
-This assumes you want to setup textures as fast as possible for use in Qodot by overwriting the Generic game definition in Trenchbroom.
+This assumes you want to setup as fast as possible for use in Qodot by overwriting the Generic game definition in Trenchbroom.
 
 You'll need a `res://textures` folder to hold map textures. These textures will be read from both Godot and Trenchbroom.
 
@@ -49,7 +43,7 @@ This is effective if you have multiple projects using Qodot, or if you need to u
 8. In Godot, set the Textures Dir of your QodotMap node to your /textures folder
 9. Click Build Map to see the results
 
-If you need more guidance on these steps, consider reading the page on [Game Definitions](../entities/game-definition.html) to create a personalized Trenchbroom setup for your project.
+If you need more guidance on these steps, consider reading the page on [Game Definitions](https://qodotplugin.github.io/docs/entities/game-definition.html) to create a personalized Trenchbroom setup for your project.
 
 # The Next Step
 
