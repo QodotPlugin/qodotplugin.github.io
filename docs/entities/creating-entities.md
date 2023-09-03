@@ -15,11 +15,11 @@ In Qodot, you define new types of entities by creating a new .tres resource file
 
 Click the "New Resource" icon in the Inspector:
 
-![](../images/res-inspector.png)
+![](https://qodotplugin.github.io/images/res_inspector.png)
 
 Or right-click the FileSystem and click "Create New Resource":
 
-![](../images/res-filesystem.png)
+![](https://qodotplugin.github.io/images/res-filesystem.png)
 
 Either will take you to the resource search screen. Here you can type in the following quick terms to narrow down the type of resource you want to create:
 
