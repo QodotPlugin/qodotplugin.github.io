@@ -46,11 +46,25 @@ To bring back the "Full Build" toolbar, press <kbd>Alt</kbd> + <kbd>B</kbd> and 
 2. Download and install the plugin. `/qodot/textures` can be ignored to save on filesize and import time.
 3. Go to Project > Project Settings > Plugins, then enable Qodot.
 
+# Compatibility
+
+## Updating
+
+When updating, make sure to delete `/addons/qodot` from your project before installing a newer version, in order to avoid script errors arising from mis-matched code.
+
+## Compatibility
+
+Here is the compatibility for Qodot across different Godot versions.
+- Godot 4.1.x+
+  - Qodot 2023.1
+- Godot 3.3.x+
+    - Qodot 1.7.0+
+- Godot 3.2.x+
+    - Qodot 1.6.0+
+- Godot 3.1.x+
+    - Qodot 1.0
+    - Qodot 1.5.6
+
 ## Using Qodot
 
-To get started with Qodot, you can read:
-
-1. [Building Maps](building-maps.md) to learn the absolute basics of building maps using Qodot.
-2. [Loading Textures](loading-textures.md) to learn how to connect Trenchbroom to Godot and apply your Godot project's textures to geometry using Trenchbroom.
-
-By completing the beginner's guide, you will be able to build and texture maps for Godot using Trenchbroom.
+To get started with Qodot, read [Building Maps](building-maps.md) to learn the absolute basics of building maps using Qodot.
