@@ -45,6 +45,12 @@ This is effective if you have multiple projects using Qodot, or if you need to u
 
 If you need more guidance on these steps, consider reading the page on [Game Definitions](https://qodotplugin.github.io/docs/entities/game-definition.html) to create a personalized Trenchbroom setup for your project.
 
+# Textures
+
+Read the Trenchbroom manual to learn more about applying textures to brushes in Trenchbroom.
+- [Applying textures in Trenchbroom](https://trenchbroom.github.io/manual/latest/#working_with_textures)
+- [Managing texture collections in Trenchbroom](https://trenchbroom.github.io/manual/latest/#texture_management)
+
 # The Next Step
 
 Congratulations! You've completed the Beginner's Guide to Qodot. From having completed this guide, you should be able to build maps in Qodot and apply textures from Trenchbroom to Godot geometry.
