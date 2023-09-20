@@ -15,7 +15,7 @@ This guide covers how to add functionality to your entities in GDScript for Godo
 
 # Prerequisites
 
-You should know how to create entity definitions. Read [Creating Entities](https://qodotplugin.github.io/docs/creating-entities.html) for more information.
+You should know how to create entity definitions. Read [Creating Entities](https://qodotplugin.github.io/docs/entities/creating-entities.html) for more information.
 
 # Syntax Disclaimer
 
