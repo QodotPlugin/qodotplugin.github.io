@@ -231,6 +231,7 @@ You can define properties for entities in the Class Properties dictionary. The "
 	- Used for defining a set of choice key strings and their associated values
 	- Will display a dropdown in compatible editors
 	- Available Dictionary value types haven't been thoroughly tested
+ 	- Unlike other data types, Dictionaries have their default value optionally set in their Class Property Description as an array with 2 elements: `[description: String, value: int]`
 - Array
 	- Used for bitmask flag properties
 	- Will display a grid of checkboxes in Trenchbroom
