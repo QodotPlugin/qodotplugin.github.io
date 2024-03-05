@@ -37,9 +37,9 @@ Technically, other editors can be configured to support user-made game definitio
 
 ## Video Tutorials
 
-[dumptruck_ds's Tutorial Series: Quake Mapping in Trenchbroom ](https://youtu.be/gONePWocbqA?list=PLgDKRPte5Y0AZ_K_PZbWbgBAEt5xf74aE)
+[dumptruck_ds's Tutorial Series: Quake Mapping in Trenchbroom](https://youtu.be/gONePWocbqA?list=PLgDKRPte5Y0AZ_K_PZbWbgBAEt5xf74aE)
 
-[JohnathanLinat's Quake Level Design Starterkit](https://github.com/jonathanlinat/quake-leveldesign-starterkit/releases) exists as a way to help speed up the setup process of the above tutorial series.
+The [Quake Level Design Starter Kit](https://github.com/jonathanlinat/quake-leveldesign-starterkit/releases/latest) exists as a way to help speed up the setup process of the above tutorial series. It is also compatible with GoldSrc games and mods.
 
 ## Creating Textures
 
